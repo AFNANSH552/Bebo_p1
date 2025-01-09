@@ -1,169 +1,42 @@
-# YAML <a href="https://www.npmjs.com/package/yaml"><img align="right" src="https://badge.fury.io/js/yaml.svg" title="npm package" /></a>
+# Next.Js Website Tutorial: Create a Stunning Portfolio Website with Nextjs, Tailwind CSS and Framer-motion🌟
 
-`yaml` is a definitive library for [YAML](https://yaml.org/), the human friendly data serialization standard.
-This library:
+![GitHub stars](https://img.shields.io/github/stars/codebucks27/Next.js-Developer-Portfolio-Starter-Code?style=social&logo=ApacheSpark&label=Stars)&nbsp;&nbsp;
+![GitHub forks](https://img.shields.io/github/forks/codebucks27/Next.js-Developer-Portfolio-Starter-Code?style=social&logo=KashFlow&maxAge=3600)&nbsp;&nbsp;
+![Github Followers](https://img.shields.io/github/followers/codebucks27.svg?style=social&label=Follow)&nbsp;&nbsp;<br />
 
-- Supports both YAML 1.1 and YAML 1.2 and all common data schemas,
-- Passes all of the [yaml-test-suite](https://github.com/yaml/yaml-test-suite) tests,
-- Can accept any string as input without throwing, parsing as much YAML out of it as it can, and
-- Supports parsing, modifying, and writing YAML comments and blank lines.
+This repository contains starter code for Portfolio website created using NextJs. <br />
 
-The library is released under the ISC open source license, and the code is [available on GitHub](https://github.com/eemeli/yaml/).
-It has no external dependencies and runs on Node.js as well as modern browsers.
+For Demo and Final Code checkout following link👇: <br />
+[Nextjs Portfolio Website](https://devdreaming.com//videos/nextjs-tutorial-build-portfolio-tailwind-css-framer-motion#code-links) <br />
 
-For the purposes of versioning, any changes that break any of the documented endpoints or APIs will be considered semver-major breaking changes.
-Undocumented library internals may change between minor versions, and previous APIs may be deprecated (but not removed).
+If you want to learn how to create it please follow below tutorial👇: <br />
+https://youtu.be/Yw7yWHigGKI <br />
+[![YouTube Video Views](https://img.shields.io/youtube/views/Yw7yWHigGKI?style=social)](https://youtu.be/Yw7yWHigGKI)<br />
 
-The minimum supported TypeScript version of the included typings is 3.9;
-for use in earlier versions you may need to set `skipLibCheck: true` in your config.
-This requirement may be updated between minor versions of the library.
+### Images of The Portfolio Website:
 
-For more information, see the project's documentation site: [**eemeli.org/yaml**](https://eemeli.org/yaml/)
+![Nextjs Portfolio Website](https://github.com/codebucks27/Next.js-Developer-Portfolio-Starter-Code/blob/main/website%20images/home-light-desktop.png)
+![Nextjs Portfolio Website Dark Mode](https://github.com/codebucks27/Next.js-Developer-Portfolio-Starter-Code/blob/main/website%20images/home-dark-desktop.png)
+![Next.js Portfolio Website](https://github.com/codebucks27/Next.js-Developer-Portfolio-Starter-Code/blob/main/website%20images/about-light-desktop.png)
+![Next js Portfolio Website](https://github.com/codebucks27/Next.js-Developer-Portfolio-Starter-Code/blob/main/website%20images/projects-dark-desktop.png)
+![Portfolio Website In Next.js](https://github.com/codebucks27/Next.js-Developer-Portfolio-Starter-Code/blob/main/website%20images/articles-light-desktop.png)
+![Responsive Portfolio Website In Nextjs](https://github.com/codebucks27/Next.js-Developer-Portfolio-Starter-Code/blob/main/website%20images/about-light-mobile.png)
+![Responsive Portfolio Website In Next js](https://github.com/codebucks27/Next.js-Developer-Portfolio-Starter-Code/blob/main/website%20images/projects-light-mobile.png)
+![Mobile Responsive Portfolio Website In Next.js](https://github.com/codebucks27/Next.js-Developer-Portfolio-Starter-Code/blob/main/website%20images/articles-light-mobile.png)
 
-To install:
 
-```sh
-npm install yaml
-```
+### Resources Used in This Project
 
-**Note:** These docs are for `yaml@2`. For v1, see the [v1.10.0 tag](https://github.com/eemeli/yaml/tree/v1.10.0) for the source and [eemeli.org/yaml/v1](https://eemeli.org/yaml/v1/) for the documentation.
+- Profile image in the home page created by using https://www.midjourney.com/ tool.
+- Profile image in the about page by [Albert Dera](https://unsplash.com/@albertdera?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) 
+on [Unsplash](https://unsplash.com/photos/ILip77SbmOE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText).
+- Fonts from https://fonts.google.com/ <br />
+- Icons from https://iconify.design/ <br />
+- LightBulb Svg from https://lukaszadam.com/illustrations <br />
 
-The development and maintenance of this library is [sponsored](https://github.com/sponsors/eemeli) by:
+### External Libraries used in this project:
 
-<p align="center" width="100%">
-  <a href="https://www.scipress.io/"
-    ><img
-      width="150"
-      align="top"
-      src="https://eemeli.org/yaml/images/scipress.svg"
-      alt="Scipress"
-  /></a>
-  &nbsp; &nbsp;
-  <a href="https://manifest.build/"
-    ><img
-      width="150"
-      align="top"
-      src="https://eemeli.org/yaml/images/manifest.svg"
-      alt="Manifest"
-  /></a>
-</p>
+- [framer-motion](https://www.framer.com/motion/) <br />
+- [Tailwind css](https://tailwindcss.com/) <br />
 
-## API Overview
 
-The API provided by `yaml` has three layers, depending on how deep you need to go: [Parse & Stringify](https://eemeli.org/yaml/#parse-amp-stringify), [Documents](https://eemeli.org/yaml/#documents), and the underlying [Lexer/Parser/Composer](https://eemeli.org/yaml/#parsing-yaml).
-The first has the simplest API and "just works", the second gets you all the bells and whistles supported by the library along with a decent [AST](https://eemeli.org/yaml/#content-nodes), and the third lets you get progressively closer to YAML source, if that's your thing.
-
-A [command-line tool](https://eemeli.org/yaml/#command-line-tool) is also included.
-
-```js
-import { parse, stringify } from 'yaml'
-// or
-import YAML from 'yaml'
-// or
-const YAML = require('yaml')
-```
-
-### Parse & Stringify
-
-- [`parse(str, reviver?, options?): value`](https://eemeli.org/yaml/#yaml-parse)
-- [`stringify(value, replacer?, options?): string`](https://eemeli.org/yaml/#yaml-stringify)
-
-### Documents
-
-- [`Document`](https://eemeli.org/yaml/#documents)
-  - [`constructor(value, replacer?, options?)`](https://eemeli.org/yaml/#creating-documents)
-  - [`#anchors`](https://eemeli.org/yaml/#working-with-anchors)
-  - [`#contents`](https://eemeli.org/yaml/#content-nodes)
-  - [`#directives`](https://eemeli.org/yaml/#stream-directives)
-  - [`#errors`](https://eemeli.org/yaml/#errors)
-  - [`#warnings`](https://eemeli.org/yaml/#errors)
-- [`isDocument(foo): boolean`](https://eemeli.org/yaml/#identifying-node-types)
-- [`parseAllDocuments(str, options?): Document[]`](https://eemeli.org/yaml/#parsing-documents)
-- [`parseDocument(str, options?): Document`](https://eemeli.org/yaml/#parsing-documents)
-
-### Content Nodes
-
-- [`isAlias(foo): boolean`](https://eemeli.org/yaml/#identifying-node-types)
-- [`isCollection(foo): boolean`](https://eemeli.org/yaml/#identifying-node-types)
-- [`isMap(foo): boolean`](https://eemeli.org/yaml/#identifying-node-types)
-- [`isNode(foo): boolean`](https://eemeli.org/yaml/#identifying-node-types)
-- [`isPair(foo): boolean`](https://eemeli.org/yaml/#identifying-node-types)
-- [`isScalar(foo): boolean`](https://eemeli.org/yaml/#identifying-node-types)
-- [`isSeq(foo): boolean`](https://eemeli.org/yaml/#identifying-node-types)
-- [`new Scalar(value)`](https://eemeli.org/yaml/#scalar-values)
-- [`new YAMLMap()`](https://eemeli.org/yaml/#collections)
-- [`new YAMLSeq()`](https://eemeli.org/yaml/#collections)
-- [`doc.createAlias(node, name?): Alias`](https://eemeli.org/yaml/#working-with-anchors)
-- [`doc.createNode(value, options?): Node`](https://eemeli.org/yaml/#creating-nodes)
-- [`doc.createPair(key, value): Pair`](https://eemeli.org/yaml/#creating-nodes)
-- [`visit(node, visitor)`](https://eemeli.org/yaml/#finding-and-modifying-nodes)
-
-### Parsing YAML
-
-- [`new Lexer().lex(src)`](https://eemeli.org/yaml/#lexer)
-- [`new Parser(onNewLine?).parse(src)`](https://eemeli.org/yaml/#parser)
-- [`new Composer(options?).compose(tokens)`](https://eemeli.org/yaml/#composer)
-
-## YAML.parse
-
-```yaml
-# file.yml
-YAML:
-  - A human-readable data serialization language
-  - https://en.wikipedia.org/wiki/YAML
-yaml:
-  - A complete JavaScript implementation
-  - https://www.npmjs.com/package/yaml
-```
-
-```js
-import fs from 'fs'
-import YAML from 'yaml'
-
-YAML.parse('3.14159')
-// 3.14159
-
-YAML.parse('[ true, false, maybe, null ]\n')
-// [ true, false, 'maybe', null ]
-
-const file = fs.readFileSync('./file.yml', 'utf8')
-YAML.parse(file)
-// { YAML:
-//   [ 'A human-readable data serialization language',
-//     'https://en.wikipedia.org/wiki/YAML' ],
-//   yaml:
-//   [ 'A complete JavaScript implementation',
-//     'https://www.npmjs.com/package/yaml' ] }
-```
-
-## YAML.stringify
-
-```js
-import YAML from 'yaml'
-
-YAML.stringify(3.14159)
-// '3.14159\n'
-
-YAML.stringify([true, false, 'maybe', null])
-// `- true
-// - false
-// - maybe
-// - null
-// `
-
-YAML.stringify({ number: 3, plain: 'string', block: 'two\nlines\n' })
-// `number: 3
-// plain: string
-// block: |
-//   two
-//   lines
-// `
-```
-
----
-
-Browser testing provided by:
-
-<a href="https://www.browserstack.com/open-source">
-<img width=200 src="https://eemeli.org/yaml/images/browserstack.svg" alt="BrowserStack" />
-</a>
